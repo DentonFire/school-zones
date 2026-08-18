@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>School Zone Law Check | Denton Fire Department</title>
+<meta name="description" content="Six questions, two minutes. Do you know the Texas school bus and school zone laws? Every answer cites the statute." />
+<meta name="theme-color" content="#152a40" />
+<link rel="icon" type="image/png" href="https://files.constantcontact.com/3720c3fd901/10017eb4-f7d2-424d-92ed-c1b5424b9869.png" />
+<link rel="apple-touch-icon" href="https://files.constantcontact.com/3720c3fd901/10017eb4-f7d2-424d-92ed-c1b5424b9869.png" />
+<meta name="apple-mobile-web-app-title" content="School Zone Check" />
+<meta name="application-name" content="School Zone Check" />
+<meta property="og:title" content="School Zone Law Check" />
+<meta property="og:description" content="Most Texas drivers miss at least one. Six questions, two minutes, every answer cites the statute." />
+<meta property="og:image" content="https://files.constantcontact.com/3720c3fd901/10017eb4-f7d2-424d-92ed-c1b5424b9869.png" />
+<meta property="og:url" content="https://dentonfire.github.io/School-Zone/" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="School Zone Law Check" />
+<meta name="twitter:description" content="Do you know the Texas school bus laws? Six questions, two minutes." />
+<meta name="twitter:image" content="https://files.constantcontact.com/3720c3fd901/10017eb4-f7d2-424d-92ed-c1b5424b9869.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+  :root{
+    --navy:#152a40; --navy-2:#1d3a58; --red:#bf2726; --red-d:#a51f1f; --gold:#f9c031; --gold-d:#d4a020;
+    --bg:#f3f4f6; --ink:#374151; --ink-2:#4b5563; --line:#e8eaed; --muted:#6b7280; --faint:#9ca3af;
+    --ok:#16794a; --okbg:#e8f5ee; --stop:#bf2726; --stopbg:#fbe9e9;
+    --shadow:0 4px 20px rgba(21,42,64,.06); --shadow-lg:0 12px 30px rgba(21,42,64,.12); --r:18px; --r-sm:12px;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;min-height:100vh;}
+  .pattern{background-color:var(--navy);background-image:url('https://www.transparenttextures.com/patterns/cubes.png');}
+  header{color:#fff;text-align:center;padding:40px 20px 42px;}
+  header .eyebrow{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin:0 0 10px;}
+  header h1{margin:0 0 8px;font-size:29px;font-weight:900;line-height:1.1;letter-spacing:-.5px;}
+  header .sub{margin:0 auto;color:#c4d2e0;font-size:15px;max-width:30rem;}
+  header .pill{display:inline-block;margin-top:18px;background:var(--gold);color:var(--navy);font-weight:800;font-size:12px;padding:8px 16px;border-radius:8px;}
+  main{flex:1 0 auto;width:100%;max-width:680px;margin:0 auto;padding:0 16px calc(100px + env(safe-area-inset-bottom));}
+  .card{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);padding:26px 24px;margin-top:-26px;position:relative;z-index:10;}
+  h2{font-size:20px;font-weight:900;color:var(--navy);margin:0 0 8px;letter-spacing:-.3px;}
+  p.lede{font-size:14.5px;color:var(--muted);margin:0 0 6px;}
+  .btn{display:flex;align-items:center;justify-content:center;gap:8px;border:none;cursor:pointer;background:var(--red);color:#fff;font-weight:800;font-size:16px;padding:15px 24px;border-radius:var(--r-sm);width:100%;margin-top:18px;transition:background .15s,transform .1s;}
+  .btn:hover{background:var(--red-d);} .btn:active{transform:scale(.99);}
+  .btn-navy{background:var(--navy);} .btn-navy:hover{background:var(--navy-2);}
+  .btn-ghost{background:#eef1f5;color:var(--navy);} .btn-ghost:hover{background:#e2e6ec;}
+  /* progress */
+  .prog-wrap{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
+  .prog-track{flex:1;height:8px;background:var(--line);border-radius:99px;overflow:hidden;}
+  .prog-fill{height:100%;background:var(--gold);width:0;transition:width .3s ease;}
+  .prog-label{font-size:12px;font-weight:800;color:var(--muted);white-space:nowrap;letter-spacing:.5px;}
+  /* question */
+  .qnum{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin:0 0 6px;}
+  .qtext{font-size:19px;font-weight:800;color:var(--navy);line-height:1.3;margin:0 0 6px;letter-spacing:-.2px;}
+  .qscene{font-size:14.5px;color:var(--ink-2);margin:0 0 16px;}
+  .opts{display:flex;flex-direction:column;gap:10px;}
+  .opt{text-align:left;background:#fff;border:2px solid var(--line);border-radius:var(--r-sm);padding:14px 16px;font-size:15px;font-weight:700;color:var(--navy);cursor:pointer;transition:border-color .12s,background .12s;font-family:inherit;line-height:1.4;}
+  .opt:hover:not(:disabled){border-color:var(--navy);background:#f7f9fc;}
+  .opt:disabled{cursor:default;}
+  .opt.correct{border-color:var(--ok);background:var(--okbg);}
+  .opt.wrong{border-color:var(--stop);background:var(--stopbg);}
+  .opt .mark{float:right;font-weight:900;margin-left:10px;}
+  .opt.correct .mark{color:var(--ok);} .opt.wrong .mark{color:var(--stop);}
+  /* feedback */
+  .fb{margin-top:16px;border-radius:var(--r-sm);padding:16px 18px;border-left:5px solid var(--ok);background:#f7fbf9;}
+  .fb.no{border-left-color:var(--stop);background:#fdf7f7;}
+  .fb .verdict{font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase;color:var(--ok);margin:0 0 6px;}
+  .fb.no .verdict{color:var(--stop);}
+  .fb .why{font-size:14.5px;color:var(--ink-2);margin:0 0 10px;}
+  .fb .why strong{color:var(--navy);}
+  .cite{font-size:11.5px;color:var(--faint);border-top:1px dashed var(--line);padding-top:9px;margin:0;line-height:1.5;}
+  .cite strong{color:var(--muted);}
+  /* results */
+  .score-hero{border-radius:var(--r);padding:26px 22px;text-align:center;color:#fff;box-shadow:var(--shadow);}
+  .score-hero .n{font-size:46px;font-weight:900;line-height:1;color:var(--gold);margin:0;}
+  .score-hero .of{font-size:14px;opacity:.85;margin:4px 0 10px;}
+  .score-hero .verdict{font-size:19px;font-weight:900;margin:0;line-height:1.25;}
+  .miss{background:#fff;border:1px solid var(--line);border-left:5px solid var(--red);border-radius:var(--r-sm);padding:14px 16px;margin-top:12px;}
+  .miss .t{font-size:14px;font-weight:800;color:var(--navy);margin:0 0 4px;}
+  .miss .d{font-size:13.5px;color:var(--ink-2);margin:0;}
+  .disclaimer{font-size:12px;color:var(--muted);margin-top:24px;text-align:center;line-height:1.55;}
+  footer{flex-shrink:0;color:#c4d2e0;text-align:center;padding:32px 24px calc(30px + env(safe-area-inset-bottom));border-top:6px solid var(--gold);}
+  footer .tag{color:var(--red);font-weight:900;letter-spacing:2.5px;text-transform:uppercase;font-size:13px;margin:0 0 12px;}
+  footer a{color:#c4d2e0;}
+  /* FAB + modal */
+  #qrFab{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom));z-index:50;width:62px;height:62px;border-radius:50%;border:2px solid var(--gold-d);background:var(--gold);cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,.28);display:flex;align-items:center;justify-content:center;transition:transform .15s,background .15s;}
+  #qrFab:hover{transform:scale(1.08);background:var(--gold-d);} #qrFab:active{transform:scale(.95);}
+  #qrFab svg{width:32px;height:32px;color:var(--navy);}
+  #qrOverlay{position:fixed;inset:0;z-index:60;display:none;align-items:center;justify-content:center;padding:24px;}
+  #qrBackdrop{position:absolute;inset:0;background:rgba(21,42,64,.78);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;transition:opacity .25s;}
+  #qrModal{position:relative;background:#fff;border-radius:16px;max-width:360px;width:100%;overflow:hidden;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.4);transform:scale(.94);opacity:0;transition:transform .22s cubic-bezier(.2,.8,.3,1),opacity .22s;}
+  #qrOverlay.open #qrBackdrop{opacity:1;} #qrOverlay.open #qrModal{transform:scale(1);opacity:1;}
+  #qrModal .pad{padding:26px 24px 20px;}
+  #qrModal h3{margin:0 0 4px;font-size:19px;color:var(--navy);font-weight:900;}
+  #qrModal p{margin:0 0 16px;font-size:13px;color:var(--muted);}
+  #qrCanvas{display:inline-flex;align-items:center;justify-content:center;padding:12px;background:#f7f8fa;border:1px solid var(--line);border-radius:12px;min-width:200px;min-height:200px;}
+  #qrUrl{font-size:11.5px;color:var(--navy);word-break:break-all;margin:12px 0 0;font-weight:600;}
+  #qrModal .foot{background:#f7f8fa;border-top:1px solid var(--line);padding:14px 20px;display:flex;gap:10px;}
+  #qrModal .foot button{flex:1;border:none;cursor:pointer;font-weight:800;font-size:14px;padding:11px;border-radius:9px;}
+  #qrCopy{background:var(--navy);color:#fff;} #qrClose{background:#fff;color:var(--navy);border:1px solid var(--line)!important;}
+  @media(max-width:480px){header h1{font-size:25px;}}
+  @media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important;}}
+</style>
+</head>
+<body>
+<header class="pattern">
+  <p class="eyebrow">Denton Fire Department &bull; Community Risk Reduction</p>
+  <h1>School Zone Law Check</h1>
+  <p class="sub">Six questions. Two minutes. Every answer cites the statute.</p>
+  <span class="pill">School is back. Know the law.</span>
+</header>
+
+<main>
+  <div class="card" id="card"></div>
+  <p class="disclaimer">
+    This tool is a plain-language guide for drivers, not legal advice. Answers cite the Texas Transportation Code, the Texas Penal Code, and federal safety guidance current as of August 2026. Denton enforces a citywide handheld device ordinance that is stricter than state law. School crossing zone boundaries, posted speed limits, and signage are set by the local authority. Verify current requirements with the Denton Police Department or the Texas Department of Public Safety.
+  </p>
+</main>
+
+<footer class="pattern">
+  <p class="tag">Excellence Through Preparedness</p>
+  <p style="margin:0 0 4px;color:var(--gold);font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:13px;">Denton Fire Department</p>
+  <p style="margin:0 0 4px;font-size:13px;opacity:.85;">Community Risk Reduction</p>
+  <p style="margin:0;font-size:13px;"><a href="tel:9403498840">(940) 349-8840</a> &bull; <a href="https://dentonfire.com" target="_blank" rel="noopener">dentonfire.com</a></p>
+</footer>
+
+<button id="qrFab" aria-label="Scan for mobile access">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0 1 3.75 9.375v-4.5ZM3.75 14.625c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5a1.125 1.125 0 0 1-1.125-1.125v-4.5ZM13.5 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0 1 13.5 9.375v-4.5Z"/>
+    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 6.75h.75v.75h-.75zM6.75 16.5h.75v.75h-.75zM16.5 6.75h.75v.75h-.75zM13.5 13.5h.75v.75h-.75zM13.5 19.5h.75v.75h-.75zM19.5 13.5h.75v.75h-.75zM19.5 19.5h.75v.75h-.75zM16.5 16.5h.75v.75h-.75z"/>
+  </svg>
+</button>
+<div id="qrOverlay" role="dialog" aria-modal="true" aria-label="Share QR code">
+  <div id="qrBackdrop"></div>
+  <div id="qrModal">
+    <div class="pad">
+      <h3>Scan for Mobile Access</h3>
+      <p>Point a phone camera at the code to open this quiz.</p>
+      <div id="qrCanvas"></div>
+      <p id="qrUrl"></p>
+    </div>
+    <div class="foot"><button id="qrCopy">Copy link</button><button id="qrClose">Close</button></div>
+  </div>
+</div>
+
+<script>
+var DEFAULT_URL = "https://dentonfire.github.io/School-Zone/";
+
+/* Every answer below is sourced to primary law or federal safety guidance.
+   TX Transp. Code 545.066 (passing a school bus), 545.425 (wireless device in school
+   crossing zone), 545.4251 (electronic messaging), and NHTSA school bus safety. */
+var QUESTIONS = [
+  {
+    scene: "You are driving on a five-lane road. The middle lane is a shared center turn lane. A school bus going the other way stops and puts its stop arm out.",
+    q: "Do you have to stop?",
+    opts: ["Yes, you must stop", "No, the turn lane divides the road"],
+    correct: 0,
+    why: "<strong>You must stop.</strong> The statute settles this outright: a highway is <em>not</em> considered to have separate roadways if the roadways are separated only by a left turn lane. A center turn lane is a lane you are allowed to drive in, so it does not divide the road. This is the single most common mistake drivers make.<br><br>You are only excused when the road has genuinely separate roadways, meaning a physical barrier, an intervening space where driving is not permitted, or a clearly indicated dividing section. A raised median counts. Paint does not.",
+    cite: "<strong>TX Transportation Code &sect;545.066(a), (f)(1), (f)(2).</strong> Operators approaching from either direction must stop when the bus is operating a visual signal."
+  },
+  {
+    scene: "You are driving through a school crossing zone during the posted reduced-speed hours. Your phone rings and you pick it up to take the call.",
+    q: "Is that legal in Texas?",
+    opts: ["Yes, calls are fine, only texting is banned", "No, handheld use is prohibited here"],
+    correct: 1,
+    why: "<strong>Not legal.</strong> In a school crossing zone Texas prohibits <em>using</em> a wireless communication device, not just texting. Handheld calls are covered. The exceptions are a hands-free device or a stopped vehicle.<br><br>Two details worth knowing. A school crossing zone is the designated reduced-speed zone during the hours that limit is in effect, not simply anywhere near a school. And in Denton the city has its own citywide handheld ordinance, which is stricter than the state rule.",
+    cite: "<strong>TX Transportation Code &sect;545.425;</strong> &ldquo;school crossing zone&rdquo; defined at &sect;541.302(13). Denton also enforces a separate citywide handheld ordinance."
+  },
+  {
+    scene: "Federal safety guidance defines an area around a stopped school bus where a child is hardest for the driver to see.",
+    q: "How big is the school bus danger zone?",
+    opts: ["3 feet in every direction", "10 feet in every direction", "25 feet in every direction"],
+    correct: 1,
+    why: "<strong>Ten feet.</strong> NHTSA teaches children to think of it as five giant steps: stand at least that far back from the curb, and if they must cross, walk at least that far out in front of the bus and make eye contact with the driver first.<br><br>Treat ten feet as a <em>minimum standoff, not a safe clearance</em>. There is no safe distance directly behind a bus. The rule behind the bus is simply never.",
+    cite: "<strong>NHTSA School Bus Safety.</strong> Children are taught to stay at least ten feet, or five giant steps, away from the bus."
+  },
+  {
+    scene: "A driver blows past a stopped school bus with its red lights flashing and stop arm out. It is their first offense.",
+    q: "What is the fine?",
+    opts: ["$200 to $500", "$500 to $1,250", "Up to $10,000"],
+    correct: 1,
+    why: "<strong>$500 to $1,250</strong>, plus court costs. A second offense within five years runs $1,000 to $2,000, and the court may suspend the license for up to six months.<br><br>It escalates hard from there. If passing the bus causes serious bodily injury it becomes a Class A misdemeanor, up to $4,000 and up to a year in county jail. A second conviction at that level is a state jail felony, 180 days to two years.",
+    cite: "<strong>TX Transportation Code &sect;545.066(c), (d).</strong> Jail ranges from Texas Penal Code &sect;&sect;12.21 and 12.35."
+  },
+  {
+    scene: "You are on a normal Denton street, nowhere near a school. While driving, you pick up your phone to read and answer a text.",
+    q: "Is that legal?",
+    opts: ["Yes, the ban only applies in school zones", "No, it is banned statewide while driving"],
+    correct: 1,
+    why: "<strong>Not legal.</strong> Texas bans reading, writing, or sending an electronic message while driving anywhere in the state. The state exception is when the vehicle is stopped, and hands-free use, navigation, and emergency calls are treated separately.<br><br>Denton adds a stricter layer. The city's own handheld ordinance covers more than texting, and the city's guidance is that a vehicle must be <em>out of a traffic lane</em> before a driver uses a handheld device. Paused at a red light does not qualify under the city rule.",
+    cite: "<strong>TX Transportation Code &sect;545.4251:</strong> first offense $25 to $99, repeat $100 to $200, and a Class A misdemeanor (up to $4,000 and up to one year in jail) if it causes death or serious bodily injury. The Denton citywide handheld ordinance is separate and stricter."
+  },
+  {
+    scene: "Your child steps off the bus and drops a folder. It slides underneath, near the front wheels.",
+    q: "What should they do?",
+    opts: ["Quickly grab it before the bus moves", "Leave it and tell the bus driver", "Walk around the back to reach it"],
+    correct: 1,
+    why: "<strong>Leave it and tell the driver.</strong> Bending down near the bus puts a child exactly where the driver cannot see them, and walking behind the bus is worse. Teach both halves: never walk behind the bus, and if something drops, get the driver's attention instead of reaching for it.",
+    cite: "<strong>NHTSA School Bus Safety.</strong> NHTSA tells children never to walk behind a school bus, and that if they drop something they should tell the driver rather than try to pick it up."
+  }
+];
+
+var idx = 0, score = 0, missed = [];
+var card = document.getElementById('card');
+
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+
+function renderIntro(){
+  card.innerHTML =
+    '<h2>Most drivers miss at least one.</h2>'+
+    '<p class="lede">School is back in session, and the buses are running every morning and afternoon. These are the six rules that matter most on a Denton street right now. Every answer cites the law it comes from.</p>'+
+    '<button class="btn" id="startBtn">Start the check</button>';
+  document.getElementById('startBtn').addEventListener('click', function(){ idx=0; score=0; missed=[]; renderQ(); });
+}
+
+function renderQ(){
+  var item = QUESTIONS[idx];
+  var pct = Math.round((idx / QUESTIONS.length) * 100);
+  var html =
+    '<div class="prog-wrap"><div class="prog-track"><div class="prog-fill" style="width:'+pct+'%"></div></div>'+
+    '<div class="prog-label">'+(idx+1)+' OF '+QUESTIONS.length+'</div></div>'+
+    '<p class="qnum">Question '+(idx+1)+'</p>'+
+    '<p class="qscene">'+item.scene+'</p>'+
+    '<p class="qtext">'+item.q+'</p>'+
+    '<div class="opts" id="opts">';
+  item.opts.forEach(function(o,i){
+    html += '<button class="opt" data-i="'+i+'">'+esc(o)+'</button>';
+  });
+  html += '</div><div id="fbSlot"></div>';
+  card.innerHTML = html;
+  Array.prototype.forEach.call(card.querySelectorAll('.opt'), function(b){
+    b.addEventListener('click', function(){ answer(parseInt(b.getAttribute('data-i'),10)); });
+  });
+  card.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function answer(choice){
+  var item = QUESTIONS[idx];
+  var right = (choice === item.correct);
+  if(right){ score++; } else { missed.push(item); }
+  Array.prototype.forEach.call(card.querySelectorAll('.opt'), function(b,i){
+    b.disabled = true;
+    if(i === item.correct){ b.classList.add('correct'); b.innerHTML += '<span class="mark">&#10003;</span>'; }
+    else if(i === choice){ b.classList.add('wrong'); b.innerHTML += '<span class="mark">&#10007;</span>'; }
+  });
+  var last = (idx === QUESTIONS.length - 1);
+  document.getElementById('fbSlot').innerHTML =
+    '<div class="fb'+(right?'':' no')+'">'+
+      '<p class="verdict">'+(right?'Correct':'Not quite')+'</p>'+
+      '<p class="why">'+item.why+'</p>'+
+      '<p class="cite">'+item.cite+'</p>'+
+    '</div>'+
+    '<button class="btn btn-navy" id="nextBtn">'+(last?'See my result':'Next question')+'</button>';
+  document.getElementById('nextBtn').addEventListener('click', function(){
+    if(last){ renderResult(); } else { idx++; renderQ(); }
+  });
+  document.getElementById('nextBtn').scrollIntoView({behavior:'smooth', block:'center'});
+}
+
+function renderResult(){
+  var verdict, bg;
+  if(score === 6){ verdict = "Perfect. You know the law."; bg = "background:var(--navy);"; }
+  else if(score >= 4){ verdict = "Close, but the gaps are the ones that hurt kids."; bg = "background:var(--navy-2);"; }
+  else { verdict = "Worth five minutes before Thursday."; bg = "background:var(--red);"; }
+
+  var html =
+    '<div class="score-hero pattern" style="'+bg+'">'+
+      '<p class="n">'+score+'</p><p class="of">out of '+QUESTIONS.length+' correct</p>'+
+      '<p class="verdict">'+verdict+'</p>'+
+    '</div>';
+
+  if(missed.length){
+    html += '<p style="font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin:20px 0 2px;">Worth remembering</p>';
+    missed.forEach(function(m){
+      html += '<div class="miss"><p class="t">'+m.q+'</p><p class="d">'+m.why.replace(/<[^>]*>/g,'')+'</p></div>';
+    });
+  } else {
+    html += '<div class="miss" style="border-left-color:var(--ok)"><p class="t">You got all six.</p><p class="d">Send this to someone who drives your kids to school. The center turn lane question is the one almost everyone misses.</p></div>';
+  }
+
+  html +=
+    '<button class="btn" id="shareBtn">Share this check</button>'+
+    '<button class="btn btn-ghost" id="againBtn">Take it again</button>';
+  card.innerHTML = html;
+  document.getElementById('againBtn').addEventListener('click', renderIntro);
+  document.getElementById('shareBtn').addEventListener('click', function(){
+    var txt = "I scored "+score+"/6 on the Denton Fire Department School Zone Law Check.";
+    if(navigator.share){ navigator.share({title:'School Zone Law Check', text:txt, url:shareUrl}).catch(function(){ openQR(); }); }
+    else { openQR(); }
+  });
+  card.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+renderIntro();
+
+/* QR share */
+var shareUrl = (location.protocol.indexOf('http')===0) ? location.href.split('#')[0] : DEFAULT_URL;
+var qrFab=document.getElementById('qrFab'), qrOverlay=document.getElementById('qrOverlay'), qrBuilt=false;
+function buildQR(){
+  if(qrBuilt) return;
+  document.getElementById('qrUrl').textContent = shareUrl;
+  var box = document.getElementById('qrCanvas');
+  try{
+    if(typeof QRCode === 'undefined') throw new Error('lib');
+    new QRCode(box,{text:shareUrl,width:196,height:196,colorDark:'#152a40',colorLight:'#f7f8fa',correctLevel:QRCode.CorrectLevel.M});
+    qrBuilt = true;
+  }catch(e){
+    box.innerHTML = '<img alt="QR code to open this tool" width="196" height="196" src="https://api.qrserver.com/v1/create-qr-code/?size=196x196&color=152a40&bgcolor=f7f8fa&data='+encodeURIComponent(shareUrl)+'" />';
+    qrBuilt = true;
+  }
+}
+function openQR(){ buildQR(); qrOverlay.style.display='flex'; requestAnimationFrame(function(){ qrOverlay.classList.add('open'); }); document.getElementById('qrClose').focus(); }
+function closeQR(){ qrOverlay.classList.remove('open'); setTimeout(function(){ qrOverlay.style.display='none'; },240); }
+qrFab.addEventListener('click', openQR);
+document.getElementById('qrClose').addEventListener('click', closeQR);
+document.getElementById('qrBackdrop').addEventListener('click', closeQR);
+document.addEventListener('keydown', function(e){ if(e.key==='Escape' && qrOverlay.classList.contains('open')) closeQR(); });
+document.getElementById('qrCopy').addEventListener('click', function(){
+  var btn=this; function ok(){ btn.textContent='Copied!'; setTimeout(function(){ btn.textContent='Copy link'; },1600); }
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(shareUrl).then(ok).catch(ok); }
+  else { var t=document.createElement('textarea'); t.value=shareUrl; document.body.appendChild(t); t.select(); try{document.execCommand('copy');}catch(e){} document.body.removeChild(t); ok(); }
+});
+</script>
+</body>
+</html>
